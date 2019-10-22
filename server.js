@@ -18,24 +18,18 @@ var db = firebase.database();
 // });
 
 //https://www.oxxostudio.tw/articles/201907/firebase-nodejs-realtime-database.html
-var portfolioList = db.ref("portfolio-list");
-/*
-{ '-LZ5PdztuBxLpRpqyHaK': 
-   { COST: '6.22',
-     PRICE_PER_UNIT: '8.84',
-     STOCK_NAME: '中國奧園',
-     STOCK_NUM: '3883',
-     UNIT: '60000' } }
- */
+//var portfolioListpush = db.ref("portfolio-list");
+// portfolioListpush.push(
+//   { COST: '6.22',
+//   PRICE_PER_UNIT: '8.84',
+//   STOCK_NAME: 'Test',
+//   STOCK_NUM: '1234',
+//   UNIT: '60000',
+//   SYMBOL: '3883.HK',
+//   STATUS: 'close'
+//   }
+// );
 
-/*portfolioList.push(
-  { COST: '6.22',
-  PRICE_PER_UNIT: '8.84',
-  STOCK_NAME: 'Test',
-  STOCK_NUM: '1234',
-  UNIT: '60000' }
-  );
-*/
 
 var corsOptions = {
     origin: 'http://localhost:4200',
@@ -95,6 +89,8 @@ function scheduleCronstyle(){
   schedule.scheduleJob('5 * * * * *', function(){
       console.log('scheduleCronstyle:' + new Date());
       var data;
+      var portfolioList = db.ref("portfolio-list").orderByChild("STATUS").equalTo('active');
+
       portfolioList.once("value", function(snapshot) {
         data = snapshot.val();
         //console.log(snapshot.val());

@@ -1,0 +1,69 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Total Unit</h4>
+                      <p class="card-category"> </p>
+                  </div>
+                  <div class="card-body">
+                      <button nz-button (click)="showModal()" nzType="primary" >Add</button>
+                      <nz-table #editRowTable nzBordered zSize="middle" [nzScroll]="{ x: '100%' }" [nzData]="listOfData">
+                        <thead>
+                          <tr style="padding: 4px;">
+                            <th >Member</th>
+                            <th >Unit</th>
+                            <th >Price</th>
+                            <th >%</th>
+                            <th >Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let data of listOfData" >
+                            <td >
+                              <ng-container *ngIf="!editCache[data.$key].edit; else MEMBER_InputTpl">
+                                {{data.MEMBER}}
+                              </ng-container>
+                              <ng-template #MEMBER_InputTpl>
+                                <input type="text" nz-input [(ngModel)]="editCache[data.$key].data.MEMBER" />
+                              </ng-template>
+                            </td>
+                            <td >
+                              <ng-container *ngIf="!editCache[data.$key].edit; else UNIT_InputTpl">
+                                {{data.UNIT}}
+                              </ng-container>
+                              <ng-template #UNIT_InputTpl>
+                                <input type="text" nz-input [(ngModel)]="editCache[data.$key].data.UNIT" />
+                              </ng-template>
+                            </td>
+                            <td >{{data.PRICE}}</td>
+                            <td >{{data.PERCENTAGE}}</td>
+                            <td >
+                                <div class="editable-row-operations">
+                                    <ng-container *ngIf="!editCache[data.$key].edit; else saveTpl">
+                                      <a (click)="startEdit(data.$key)">Edit</a>
+                                    </ng-container>
+                                    <ng-template #saveTpl>
+                                      <a (click)="saveEdit(data.$key)">Save</a>
+                                      <a nz-popconfirm nzTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data.$key)">Cancel</a>
+                                    </ng-template>
+                                </div>
+                              <a nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.$key)">Delete</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </nz-table>
+
+                      <div>Overall Total HKD: <span id="OverallTotalPrice"></span></div>
+                      <div>Overall Total Unit: <span id="OverallTotalUnit"></span></div>
+                      <div>Price per unit: <span id="PricePerUnit"></span></div>
+                      <div>Stock Ratio: <span id="StockRatio"></span>%</div>
+                      <div>Cash Ratio: <span id="CashRatio"></span>%</div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

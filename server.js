@@ -125,7 +125,7 @@ function getMarketPrice(value, uid){
         //console.log(type);
         for (let [key, value] of Object.entries(quotes[type])) {
           //console.log(`${key}: ${value}`);
-          if( key == 'previousClose'){
+          if( key == 'regularMarketPrice'){
             updatePortfolioStockPrice(uid, value);
           }
         }
@@ -133,12 +133,12 @@ function getMarketPrice(value, uid){
   });
 }
 
-function updatePortfolioStockPrice(uid, previousClose){
+function updatePortfolioStockPrice(uid, regularMarketPrice){
   console.log( "uid: " + uid);
-  console.log( "previousClose: " + previousClose);
+  console.log( "regularMarketPrice: " + regularMarketPrice);
   var portfolioListById = db.ref('portfolio-list/'+ uid );
   portfolioListById.update({
-    PREVIOUS_CLOSE : previousClose
+    REGULAR_MARKET_PRICE : regularMarketPrice
   });
   console.log( "updated.");
 }

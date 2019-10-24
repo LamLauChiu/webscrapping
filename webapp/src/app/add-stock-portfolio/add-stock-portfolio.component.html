@@ -1,0 +1,75 @@
+<div > 
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="STOCK_NAME" nzRequired>
+            <span>
+                Stock Name:
+             
+            </span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the Stock name!">
+            <input nz-input id="STOCK_NAME" formControlName="STOCK_NAME" />
+          </nz-form-control>
+        </nz-form-item>
+        
+        <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="STOCK_NUM" nzRequired>
+              <span>
+                  Stock Number:
+                
+              </span>
+            </nz-form-label>
+            <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the Stock Number!">
+              <input nz-input id="STOCK_NUM" formControlName="STOCK_NUM" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="COST" nzRequired>
+                <span>
+                    Cost:
+                 
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the Cost!">
+                <input nz-input id="COST" formControlName="COST" />
+              </nz-form-control>
+        </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="UNIT" nzRequired>
+                  <span>
+                      Unit:
+                    
+                  </span>
+                </nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the Unit!">
+                  <input nz-input id="UNIT" formControlName="UNIT" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="SYMBOL" nzRequired>
+                  <span>
+                      Symbol:
+                    <i
+                      nz-icon
+                      nz-tooltip
+                      nzTitle="Symbol e.g : 0005.HK"
+                      nzType="question-circle"
+                      nzTheme="outline"
+                    ></i>
+                  </span>
+                </nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the SYMBOL!">
+                  <input nz-input id="SYMBOL" formControlName="SYMBOL" />
+                </nz-form-control>
+              </nz-form-item>
+
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Insert</button>
+          </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>

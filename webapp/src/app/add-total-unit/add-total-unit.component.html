@@ -1,0 +1,33 @@
+<div > 
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="MEMBER" nzRequired>
+          <span>
+              Member:
+          </span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the Stock name!">
+          <input nz-input id="MEMBER" formControlName="MEMBER" />
+        </nz-form-control>
+      </nz-form-item>
+
+          <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="UNIT" nzRequired>
+                <span>
+                    Unit:
+                  
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input the Unit!">
+                <input nz-input id="UNIT" formControlName="UNIT" />
+              </nz-form-control>
+          </nz-form-item>
+
+
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary">Insert</button>
+        </nz-form-control>
+      </nz-form-item>
+  </form>
+</div>

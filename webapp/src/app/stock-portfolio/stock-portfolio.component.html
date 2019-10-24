@@ -1,0 +1,81 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Stock Portfolio</h4>
+                      <p class="card-category"> </p>
+                  </div>
+                  <div class="card-body">
+                      <button nz-button (click)="showModal()" nzType="primary" >Add</button>
+                      <nz-table #editRowTable nzBordered zSize="middle" [nzScroll]="{ x: '100%' }" [nzData]="listOfData">
+                        <thead>
+                          <tr style="padding: 4px;">
+                            <th >Stock Name</th>
+                            <th >Stock No.</th>
+                            <!-- <th >Cost</th> -->
+                            <th >Regular MKT $</th>
+                            <th >Unit</th>
+                            <!-- <th >Price per Unit</th> -->
+                            <th >Total$</th>
+                            <th >Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let data of listOfData" >
+                            <td >
+                              <ng-container *ngIf="!editCache[data.$key].edit; else STOCK_NAME_InputTpl">
+                                {{data.STOCK_NAME}}
+                              </ng-container>
+                              <ng-template #STOCK_NAME_InputTpl>
+                                <input type="text" nz-input [(ngModel)]="editCache[data.$key].data.STOCK_NAME" />
+                              </ng-template>
+                            </td>
+                            <!-- <td >{{data.STOCK_NAME}}</td> -->
+                            <td >
+                                <ng-container *ngIf="!editCache[data.$key].edit; else STOCK_NUM_InputTpl">
+                                  <td >{{data.STOCK_NUM}}</td>
+                                </ng-container>
+                                <ng-template #STOCK_NUM_InputTpl>
+                                  <input type="text" nz-input [(ngModel)]="editCache[data.$key].data.STOCK_NUM" />
+                                </ng-template>
+                              </td>
+                            <!-- <td >{{data.STOCK_NUM}}</td> -->
+                            <!-- <td >{{data.COST}}</td> -->
+                            <td >{{data.REGULAR_MARKET_PRICE}}</td>
+                            <!-- <td >{{data.UNIT}}</td> -->
+                            <td >
+                              <ng-container *ngIf="!editCache[data.$key].edit; else UNIT_InputTpl">
+                                {{data.UNIT}}
+                              </ng-container>
+                              <ng-template #UNIT_InputTpl>
+                                <input type="text" nz-input [(ngModel)]="editCache[data.$key].data.UNIT" />
+                              </ng-template>
+                            </td>
+                            <!-- <td >{{data.PRICE_PER_UNIT}}</td> -->
+                            <td >{{data.TOTAL_PRICE}}</td>
+                            <td >
+                                <div class="editable-row-operations">
+                                    <ng-container *ngIf="!editCache[data.$key].edit; else saveTpl">
+                                      <a (click)="startEdit(data.$key)">Edit</a>
+                                    </ng-container>
+                                    <ng-template #saveTpl>
+                                      <a (click)="saveEdit(data.$key)">Save</a>
+                                      <a nz-popconfirm nzTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data.$key)">Cancel</a>
+                                    </ng-template>
+                                </div>
+                              <a nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.$key)">Delete</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </nz-table>
+
+                      <div>Overall Total HKD: <span id="OverallTotal"></span></div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -6,8 +6,10 @@
 /out-tsc
 
 # dependencies
+serviceAccountKey.json
 /node_modules
 /webapp/node_modules
+/webapp/src/app/environments
 
 # IDEs and editors
 /.idea

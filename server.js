@@ -6,6 +6,8 @@ var schedule = require('node-schedule');
 var firebase = require("firebase-admin");
 var serviceAccount = require("./serviceAccountKey.json");
 
+const functions = require('firebase-functions');
+
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
   databaseURL: "https://familyinvestment-f8cf1.firebaseio.com"
@@ -100,7 +102,7 @@ function scheduleCronstyle(){
           //console.log(uid);
           for (let [key, value] of Object.entries(data[uid])) {
             //console.log(`${key}: ${value}`);
-            if( key == "SYMBOL" ){
+            if( key === "SYMBOL" ){
               getMarketPrice(value, uid);
               //console.log( "previousClose:"+ previousClose);
             }
@@ -125,7 +127,7 @@ function getMarketPrice(value, uid){
         //console.log(type);
         for (let [key, value] of Object.entries(quotes[type])) {
           //console.log(`${key}: ${value}`);
-          if( key == 'regularMarketPrice'){
+          if( key === 'regularMarketPrice'){
             updatePortfolioStockPrice(uid, value);
           }
         }

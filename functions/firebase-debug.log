@@ -1,0 +1,141 @@
+[debug] [2019-11-01T05:11:58.137Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T05:11:58.139Z] Command:       /Users/Ivan.lam/.nvm/versions/node/v8.16.0/bin/node /Users/Ivan.lam/.nvm/versions/node/v8.16.0/bin/firebase serve --only functions
+[debug] [2019-11-01T05:11:58.139Z] CLI Version:   7.6.2
+[debug] [2019-11-01T05:11:58.139Z] Platform:      darwin
+[debug] [2019-11-01T05:11:58.139Z] Node Version:  v8.16.0
+[debug] [2019-11-01T05:11:58.139Z] Time:          Fri Nov 01 2019 13:11:58 GMT+0800 (HKT)
+[debug] [2019-11-01T05:11:58.140Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T05:11:58.140Z] 
+[debug] [2019-11-01T05:11:58.145Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-01T05:11:58.145Z] > authorizing via signed-in user
+[debug] [2019-11-01T05:11:58.145Z] [iam] checking project familyinvestment-f8cf1 for permissions ["firebase.projects.get"]
+[debug] [2019-11-01T05:11:58.147Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/familyinvestment-f8cf1:testIamPermissions  
+
+[debug] [2019-11-01T05:11:59.190Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-01T05:11:59.192Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/familyinvestment-f8cf1  
+ 
+[debug] [2019-11-01T05:11:59.546Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Using node@8 from host.
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/Users/Ivan.lam/Projects/git/webscrapping/functions" for Cloud Functions...
+[debug] [2019-11-01T05:11:59.817Z] [worker-~diagnostic~-385eafd9-6cc6-42a9-b5b0-a92f08d2cbd7]: BUSY
+[debug] [2019-11-01T05:12:00.021Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/Ivan.lam/Projects/git/webscrapping/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T05:12:00.022Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T05:12:00.023Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"/Users/Ivan.lam/Projects/git/webscrapping/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T05:12:00.024Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/Ivan.lam/Projects/git/webscrapping/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T05:12:00.024Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/Ivan.lam/Projects/git/webscrapping/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[app]: http function initialized (http://localhost:5000/familyinvestment-f8cf1/us-central1/app).
+[info] >  Server started!
+[debug] [2019-11-01T05:12:00.382Z] [worker-~diagnostic~-385eafd9-6cc6-42a9-b5b0-a92f08d2cbd7]: exited
+[debug] [2019-11-01T05:12:00.382Z] [worker-~diagnostic~-385eafd9-6cc6-42a9-b5b0-a92f08d2cbd7]: FINISHED
+[debug] [2019-11-01T05:12:02.781Z] Accepted request GET /familyinvestment-f8cf1/us-central1/app --> app
+[debug] [2019-11-01T05:12:02.789Z] [worker-app-99fdc50d-d07e-4f24-b659-b6cea5207577]: BUSY
+[debug] [2019-11-01T05:12:03.106Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/Ivan.lam/Projects/git/webscrapping/functions","node_version":"8.16.0"}
+[debug] [2019-11-01T05:12:03.108Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-01T05:12:03.111Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.7.0","resolution":"/Users/Ivan.lam/Projects/git/webscrapping/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-01T05:12:03.112Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/Ivan.lam/Projects/git/webscrapping/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T05:12:03.113Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/Ivan.lam/Projects/git/webscrapping/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-01T05:12:03.516Z] [runtime-status] Trigger "app" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "app"
+[debug] [2019-11-01T05:12:03.516Z] [runtime-status]  {"httpsTrigger":{},"name":"app","entryPoint":"app"}
+[debug] [2019-11-01T05:12:03.516Z] [runtime-status] Running app in mode HTTPS {}
+[info] >  Server started!
+[debug] [2019-11-01T05:12:03.521Z] {"socketPath":"/var/folders/w8/d31r0d8d11zfv0g5nm6mywb80000gp/T/firebase_emulator_invocation_99498.sock"}
+[debug] [2019-11-01T05:12:03.521Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/w8/d31r0d8d11zfv0g5nm6mywb80000gp/T/firebase_emulator_invocation_99498.sock"}
+[debug] [2019-11-01T05:12:03.552Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T05:12:03.559Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "app" in ~1s
+[debug] [2019-11-01T05:12:03.562Z] [worker-app-99fdc50d-d07e-4f24-b659-b6cea5207577]: IDLE
+[info] >  scheduleCronstyle:Fri Nov 01 2019 13:12:05 GMT+0800 (HKT)
+[info] >  [2019-11-01T05:12:05.227Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "STATUS" at /portfolio-list to your security rules for better performance. 
+[info] >  uid: -LrtcaefcEMABWKYapKr
+[info] >  regularMarketPrice: 10.54
+[info] >  updated.
+[info] >  uid: -Lrtcp0gfj8Mk-QjWlsS
+[info] >  regularMarketPrice: 37.1
+[info] >  updated.
+[info] >  uid: -Lrtd-SUGkA3IHqjjQdA
+[info] >  regularMarketPrice: 1.63
+[info] >  updated.
+[info] >  uid: -Lrtd722VYqh3AeJ2AQE
+[info] >  regularMarketPrice: 91.7
+[info] >  updated.
+[info] >  uid: -Lrtck2r02xhLhqguvT_
+[info] >  regularMarketPrice: 321.4
+[info] >  updated.
+[info] >  uid: -Lrtcv71c0ZqziPc3a0i
+[info] >  regularMarketPrice: 5.14
+[info] >  updated.
+[info] >  uid: -Lrtd3wi7Y0b38vWlUqA
+[info] >  regularMarketPrice: 59.55
+[info] >  updated.
+[debug] [2019-11-01T05:12:08.154Z] Accepted request GET /familyinvestment-f8cf1/us-central1/app/api/get --> app
+[debug] [2019-11-01T05:12:08.154Z] [worker-app-99fdc50d-d07e-4f24-b659-b6cea5207577]: BUSY
+[debug] [2019-11-01T05:12:08.154Z] [runtime-status] Trigger "app" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "app"
+[debug] [2019-11-01T05:12:08.155Z] [runtime-status]  {"httpsTrigger":{},"name":"app","entryPoint":"app"}
+[debug] [2019-11-01T05:12:08.155Z] [runtime-status] Running app in mode HTTPS {}
+[debug] [2019-11-01T05:12:08.155Z] {"socketPath":"/var/folders/w8/d31r0d8d11zfv0g5nm6mywb80000gp/T/firebase_emulator_invocation_99498.sock"}
+[debug] [2019-11-01T05:12:08.156Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/w8/d31r0d8d11zfv0g5nm6mywb80000gp/T/firebase_emulator_invocation_99498.sock"}
+[debug] [2019-11-01T05:12:08.158Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T05:12:08.162Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "app" in ~1s
+[debug] [2019-11-01T05:12:08.162Z] [worker-app-99fdc50d-d07e-4f24-b659-b6cea5207577]: IDLE
+[debug] [2019-11-01T05:12:38.010Z] Accepted request GET /familyinvestment-f8cf1/us-central1/app/api/getQuotesBySymbol/0005.HK --> app
+[debug] [2019-11-01T05:12:38.011Z] [worker-app-99fdc50d-d07e-4f24-b659-b6cea5207577]: BUSY
+[debug] [2019-11-01T05:12:38.011Z] [runtime-status] Trigger "app" has been found, beginning invocation! {}
+[info] i  functions: Beginning execution of "app"
+[debug] [2019-11-01T05:12:38.011Z] [runtime-status]  {"httpsTrigger":{},"name":"app","entryPoint":"app"}
+[debug] [2019-11-01T05:12:38.011Z] [runtime-status] Running app in mode HTTPS {}
+[debug] [2019-11-01T05:12:38.012Z] {"socketPath":"/var/folders/w8/d31r0d8d11zfv0g5nm6mywb80000gp/T/firebase_emulator_invocation_99498.sock"}
+[debug] [2019-11-01T05:12:38.012Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/w8/d31r0d8d11zfv0g5nm6mywb80000gp/T/firebase_emulator_invocation_99498.sock"}
+[debug] [2019-11-01T05:12:38.014Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-11-01T05:12:38.017Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "app" in ~1s
+[debug] [2019-11-01T05:12:38.148Z] [worker-app-99fdc50d-d07e-4f24-b659-b6cea5207577]: IDLE
+[info] >  scheduleCronstyle:Fri Nov 01 2019 13:13:05 GMT+0800 (HKT)
+[info] >  [2019-11-01T05:13:05.183Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "STATUS" at /portfolio-list to your security rules for better performance. 
+[info] >  uid: -Lrtck2r02xhLhqguvT_
+[info] >  regularMarketPrice: 321.4
+[info] >  updated.
+[info] >  uid: -LrtcaefcEMABWKYapKr
+[info] >  regularMarketPrice: 10.54
+[info] >  updated.
+[info] >  uid: -Lrtcv71c0ZqziPc3a0i
+[info] >  regularMarketPrice: 5.14
+[info] >  updated.
+[info] >  uid: -Lrtd-SUGkA3IHqjjQdA
+[info] >  regularMarketPrice: 1.63
+[info] >  updated.
+[info] >  uid: -Lrtcp0gfj8Mk-QjWlsS
+[info] >  regularMarketPrice: 37.1
+[info] >  updated.
+[info] >  uid: -Lrtd3wi7Y0b38vWlUqA
+[info] >  regularMarketPrice: 59.55
+[info] >  updated.
+[info] >  uid: -Lrtd722VYqh3AeJ2AQE
+[info] >  regularMarketPrice: 91.7
+[info] >  updated.
+[info] >  scheduleCronstyle:Fri Nov 01 2019 13:14:05 GMT+0800 (HKT)
+[info] >  [2019-11-01T05:14:05.185Z]  @firebase/database: FIREBASE WARNING: Using an unspecified index. Your data will be downloaded and filtered on the client. Consider adding ".indexOn": "STATUS" at /portfolio-list to your security rules for better performance. 
+[info] >  uid: -LrtcaefcEMABWKYapKr
+[info] >  regularMarketPrice: 10.54
+[info] >  updated.
+[info] >  uid: -Lrtcv71c0ZqziPc3a0i
+[info] >  regularMarketPrice: 5.14
+[info] >  updated.
+[info] >  uid: -Lrtd-SUGkA3IHqjjQdA
+[info] >  regularMarketPrice: 1.63
+[info] >  updated.
+[info] >  uid: -Lrtd722VYqh3AeJ2AQE
+[info] >  regularMarketPrice: 91.7
+[info] >  updated.
+[info] >  uid: -Lrtcp0gfj8Mk-QjWlsS
+[info] >  regularMarketPrice: 37.1
+[info] >  updated.
+[info] >  uid: -Lrtck2r02xhLhqguvT_
+[info] >  regularMarketPrice: 321.4
+[info] >  updated.
+[info] >  uid: -Lrtd3wi7Y0b38vWlUqA
+[info] >  regularMarketPrice: 59.55
+[info] >  updated.

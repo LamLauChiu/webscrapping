@@ -34,23 +34,23 @@ var db = firebase.database();
 
 
 var corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: true,
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
   }
   
-app.use(cors(corsOptions))
-
-app.listen(8000, () => {
-    console.log('Server started!')
-})
+// app.use(cors(corsOptions))
+app.use(cors())
+// app.listen(8000, () => {
+//     console.log('Server started!')
+// })
 
 
 app.route('/api/get').get(function (req, res) {
   res.json({'ABC':'123'});
 });
 
-//https://www.npmjs.com/package/yahoo-finance
-//https://appdividend.com/2018/11/04/angular-7-crud-example-mean-stack-tutorial/
+// //https://www.npmjs.com/package/yahoo-finance
+// //https://appdividend.com/2018/11/04/angular-7-crud-example-mean-stack-tutorial/
 app.route('/api/getQuotesBySymbol/:symbol').get(function (req, res) {
   let symbol = req.params.symbol;
   yahooFinance.quote({
@@ -61,6 +61,29 @@ app.route('/api/getQuotesBySymbol/:symbol').get(function (req, res) {
     //console.log(quotes);
   });
 });
+
+app.use('/updateAll/getQuotesBySymbol', getQuotesBySymbol );
+function getQuotesBySymbol( req, res ){
+      var data;
+      var portfolioList = db.ref("portfolio-list").orderByChild("STATUS").equalTo('active');
+      portfolioList.once("value", function(snapshot) {
+        data = snapshot.val();
+        //console.log(snapshot.val());
+         //https://zellwk.com/blog/looping-through-js-objects/
+        for (let [uid, dataValue ] of Object.entries(data)) {
+          //console.log(`${key}: ${value}`);
+          //console.log(uid);
+          for (let [key, value] of Object.entries(data[uid])) {
+            //console.log(`${key}: ${value}`);
+            if( key === "SYMBOL" ){
+              getMarketPrice(value, uid);
+              //console.log( "previousClose:"+ previousClose);
+            }
+          }
+        }
+      });
+};
+
 
 /*
 scheduleCron:
@@ -76,17 +99,7 @@ https://www.cnblogs.com/zhongweiv/p/node_schedule.html
 │ │ └─────────────── hour (0 - 23)
 │ └──────────────────── minute (0 - 59)
 └───────────────────────── second (0 - 59, OPTIONAL)
-
 */
-              /*
-                COST: 6.22
-                PRICE_PER_UNIT: 8.84
-                STOCK_NAME: 中國奧園
-                STOCK_NUM: 3883s
-                SYMBOL: 3883.HK
-                3883.HK
-                UNIT: 60000
-              */
 function scheduleCronstyle(){
   schedule.scheduleJob('5 * * * * *', function(){
       console.log('scheduleCronstyle:' + new Date());
@@ -111,8 +124,6 @@ function scheduleCronstyle(){
       });
   }); 
 }
-
-scheduleCronstyle();
 
 function getMarketPrice(value, uid){
   //console.log(value);
@@ -146,4 +157,5 @@ function updatePortfolioStockPrice(uid, regularMarketPrice){
 }
 
 
+scheduleCronstyle();
 exports.app = functions.https.onRequest(app);

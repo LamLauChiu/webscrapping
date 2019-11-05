@@ -64,7 +64,7 @@ export class TotalUnitComponent implements OnInit {
             oerallTotalPrice = oerallTotalPrice + parseFloat(a["TOTAL_PRICE"]);
           }
           console.log();
-          document.getElementById('OverallTotalPrice').innerHTML = oerallTotalPrice.toString();
+          document.getElementById('OverallTotalPrice').innerHTML = oerallTotalPrice.toFixed(2).toString();
   
         });
 
@@ -84,13 +84,13 @@ export class TotalUnitComponent implements OnInit {
             oerallTotalUnit = oerallTotalUnit + parseFloat(a["UNIT"]);
           }
 
-          document.getElementById('OverallTotalUnit').innerHTML = oerallTotalUnit.toString();
+          document.getElementById('OverallTotalUnit').innerHTML = oerallTotalUnit.toFixed(2).toString();
           console.log("oerallTotalPrice: " + oerallTotalPrice + "oerallTotalUnit: " + oerallTotalUnit );
           pricePerUnit =  oerallTotalPrice/oerallTotalUnit;
-          document.getElementById('PricePerUnit').innerHTML = pricePerUnit.toString();
+          document.getElementById('PricePerUnit').innerHTML = pricePerUnit.toFixed(2).toString();
 
-          document.getElementById('StockRatio').innerHTML =  (( (oerallTotalPrice - cash) /oerallTotalPrice ) * 100 ).toString();
-          document.getElementById('CashRatio').innerHTML = (cash/oerallTotalPrice * 100 ).toString();
+          document.getElementById('StockRatio').innerHTML =  (( (oerallTotalPrice - cash) /oerallTotalPrice ) * 100 ).toFixed(2).toString();
+          document.getElementById('CashRatio').innerHTML = (cash/oerallTotalPrice * 100 ).toFixed(2).toString();
 
           //a["PRICE"] = 
           //a["PERCENTAGE"] =
@@ -102,10 +102,10 @@ export class TotalUnitComponent implements OnInit {
         let totalPriceFromUnit = 0;
         let totalPerCentage = 0;
         this.listOfData.forEach( item =>{
-          
-          item.PRICE = (parseFloat(item.UNIT) * pricePerUnit).toString();
+          item.UNIT = parseFloat(item.UNIT).toFixed(2).toString();
+          item.PRICE = (parseFloat(item.UNIT) * pricePerUnit).toFixed(2).toString();
           totalPriceFromUnit = totalPriceFromUnit + parseFloat(item.PRICE) ;
-          item.PERCENTAGE =((parseFloat(item.UNIT)/oerallTotalUnit) * 100 ).toString();
+          item.PERCENTAGE =((parseFloat(item.UNIT)/oerallTotalUnit) * 100 ).toFixed(2).toString();
           console.log(parseFloat(item.PERCENTAGE));
           totalPerCentage = totalPerCentage + parseFloat(item.PERCENTAGE);
         });

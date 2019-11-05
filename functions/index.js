@@ -159,3 +159,7 @@ function updatePortfolioStockPrice(uid, regularMarketPrice){
 
 scheduleCronstyle();
 exports.app = functions.https.onRequest(app);
+
+//https://www.codeinwp.com/blog/best-nodejs-hosting/#Heroku
+
+//https://anidiots.guide/other-guides/hosting-on-glitch

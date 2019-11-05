@@ -118,7 +118,7 @@ export class StockPortfolioComponent implements OnInit {
 
     //this.addRow();
     //this.addRow();
-
+    
 
     this.dataState();
     let s = this.stockPortfolioSerivce.GetStockPortfoliosList();

@@ -1,0 +1,72 @@
+[debug] [2019-11-11T08:18:29.650Z] ----------------------------------------------------------------------
+[debug] [2019-11-11T08:18:29.652Z] Command:       /usr/local/bin/firebase /Users/lauchiulam/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve
+[debug] [2019-11-11T08:18:29.652Z] CLI Version:   7.7.0
+[debug] [2019-11-11T08:18:29.652Z] Platform:      darwin
+[debug] [2019-11-11T08:18:29.652Z] Node Version:  v10.15.3
+[debug] [2019-11-11T08:18:29.653Z] Time:          Mon Nov 11 2019 16:18:29 GMT+0800 (Hong Kong Standard Time)
+[debug] [2019-11-11T08:18:29.653Z] ----------------------------------------------------------------------
+[debug] [2019-11-11T08:18:29.653Z] 
+[debug] [2019-11-11T08:18:29.658Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-11T08:18:29.658Z] > authorizing via signed-in user
+[debug] [2019-11-11T08:18:29.658Z] [iam] checking project familyinvestment-f8cf1 for permissions ["firebase.projects.get"]
+[debug] [2019-11-11T08:18:29.659Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/familyinvestment-f8cf1:testIamPermissions  
+
+[debug] [2019-11-11T08:18:30.759Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-11T08:18:30.761Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/familyinvestment-f8cf1  
+ 
+[debug] [2019-11-11T08:18:31.473Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/lauchiulam/FamilyInvestment/webscrapping'...
+[info] 
+[debug] [2019-11-11T08:18:31.478Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/familyinvestment-f8cf1/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-11-11T08:18:32.394Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/lauchiulam/FamilyInvestment/webscrapping/functions" for Cloud Functions...
+[debug] [2019-11-11T08:18:32.412Z] [worker-~diagnostic~-182d7585-c029-4361-bd4d-53e0dd675bd7]: BUSY
+[info] i  hosting: Serving hosting files from: webapp/dist
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-11-11T08:18:32.721Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/lauchiulam/FamilyInvestment/webscrapping/functions","node_version":"10.15.3"}
+[debug] [2019-11-11T08:18:32.722Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-11T08:18:32.724Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/lauchiulam/FamilyInvestment/webscrapping/node_modules/firebase-admin/lib/index.js"}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-functions" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-11T08:18:32.743Z] [worker-~diagnostic~-182d7585-c029-4361-bd4d-53e0dd675bd7]: exited
+[debug] [2019-11-11T08:18:32.743Z] [worker-~diagnostic~-182d7585-c029-4361-bd4d-53e0dd675bd7]: FINISHED
+[debug] [2019-11-11T08:21:42.767Z] ----------------------------------------------------------------------
+[debug] [2019-11-11T08:21:42.768Z] Command:       /usr/local/bin/firebase /Users/lauchiulam/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve
+[debug] [2019-11-11T08:21:42.769Z] CLI Version:   7.7.0
+[debug] [2019-11-11T08:21:42.769Z] Platform:      darwin
+[debug] [2019-11-11T08:21:42.769Z] Node Version:  v10.15.3
+[debug] [2019-11-11T08:21:42.769Z] Time:          Mon Nov 11 2019 16:21:42 GMT+0800 (Hong Kong Standard Time)
+[debug] [2019-11-11T08:21:42.769Z] ----------------------------------------------------------------------
+[debug] [2019-11-11T08:21:42.769Z] 
+[debug] [2019-11-11T08:21:42.776Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-11T08:21:42.776Z] > authorizing via signed-in user
+[debug] [2019-11-11T08:21:42.776Z] [iam] checking project familyinvestment-f8cf1 for permissions ["firebase.projects.get"]
+[debug] [2019-11-11T08:21:42.778Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/familyinvestment-f8cf1:testIamPermissions  
+
+[debug] [2019-11-11T08:21:43.895Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-11T08:21:43.897Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/familyinvestment-f8cf1  
+ 
+[debug] [2019-11-11T08:21:44.505Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/lauchiulam/FamilyInvestment/webscrapping'...
+[info] 
+[debug] [2019-11-11T08:21:44.509Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/familyinvestment-f8cf1/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-11-11T08:21:45.530Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/lauchiulam/FamilyInvestment/webscrapping/functions" for Cloud Functions...
+[debug] [2019-11-11T08:21:45.549Z] [worker-~diagnostic~-e40d43ce-0a14-4ca5-8474-2d174000f434]: BUSY
+[info] i  hosting: Serving hosting files from: webapp/dist
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-11-11T08:21:45.876Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/lauchiulam/FamilyInvestment/webscrapping/functions","node_version":"10.15.3"}
+[debug] [2019-11-11T08:21:45.877Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-11T08:21:45.879Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/lauchiulam/FamilyInvestment/webscrapping/node_modules/firebase-admin/lib/index.js"}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-functions" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-11T08:21:45.898Z] [worker-~diagnostic~-e40d43ce-0a14-4ca5-8474-2d174000f434]: exited
+[debug] [2019-11-11T08:21:45.898Z] [worker-~diagnostic~-e40d43ce-0a14-4ca5-8474-2d174000f434]: FINISHED

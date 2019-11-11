@@ -38,11 +38,13 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
   }
   
+
+const port = process.env.PORT || 5001; 
 // app.use(cors(corsOptions))
 app.use(cors())
-// app.listen(8000, () => {
-//     console.log('Server started!')
-// })
+app.listen(port, () => {
+    console.log(`Server started port at: ${port}!`)
+})
 
 
 app.route('/api/get').get(function (req, res) {

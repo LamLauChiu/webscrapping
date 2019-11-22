@@ -33,6 +33,8 @@ import en from '@angular/common/locales/en';
 import { AddStockPortfolioComponent } from '../../add-stock-portfolio/add-stock-portfolio.component';
 import { AddTotalUnitComponent } from '../../add-total-unit/add-total-unit.component';
 
+// For charts
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 registerLocaleData(en);
 
 const antDesignIcons = AllIcons as {
@@ -68,6 +70,9 @@ import {
     NgZorroAntdModule,
     ScrollingModule,
     DragDropModule,
+
+    NgxChartsModule
+
   ],
   declarations: [
     DashboardComponent,
@@ -82,7 +87,8 @@ import {
     StockPortfolioComponent,
     TotalUnitComponent,
     AddStockPortfolioComponent,
-    AddTotalUnitComponent
+    AddTotalUnitComponent,
+    //
   ],
   entryComponents: [
     AddStockPortfolioComponent,

@@ -44,6 +44,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 import en from '@angular/common/locales/en';
 
+// // For charts
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 registerLocaleData(en);
 
@@ -76,6 +78,9 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
         AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module 
         AngularFireDatabaseModule,  // Firebase database module 
         //
+
+            //
+    //NgxChartsModule
   ],
   declarations: [
     AppComponent,

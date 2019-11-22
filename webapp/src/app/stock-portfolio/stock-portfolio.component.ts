@@ -9,6 +9,7 @@ import { AddStockPortfolioComponent } from '../add-stock-portfolio/add-stock-por
 
 import { DOCUMENT } from '@angular/common'; 
 
+import { single } from './data';
 
 @Component({
   selector: 'app-stock-portfolio',
@@ -33,14 +34,43 @@ export class StockPortfolioComponent implements OnInit {
       @Inject(DOCUMENT) document,
       private stockPortfolioSerivce: StockPortfolioService,
       private modalService: NzModalService,
-      ) {}
+      ) {
+        Object.assign(this, { single })
+      }
     i = 0;
     editId: string | null;
     
     listOfData: StockPortfolio[] = [];
     //listOfData: ItemData[] = [];
     editCache: { [key: string]: { edit: boolean; data: StockPortfolio } } = {};
- 
+      
+
+    //
+    single: any[];
+    multi: any[];
+  
+    view: any[] = [700, 400];
+  
+    // options
+    showXAxis = true;
+    showYAxis = true;
+    gradient = false;
+    showLegend = true;
+    showXAxisLabel = true;
+    xAxisLabel = 'Country';
+    showYAxisLabel = true;
+    yAxisLabel = 'Population';
+  
+    colorScheme = {
+      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    };
+    
+    onSelect(event) {
+      console.log(event);
+    }
+    //
+    
+
     @ViewChild(NzInputDirective, { static: false, read: ElementRef }) inputElement: ElementRef;
     
 

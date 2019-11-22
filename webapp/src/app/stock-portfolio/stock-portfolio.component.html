@@ -2,6 +2,22 @@
   <div class="container-fluid">
       <div class="row">
           <div class="col-md-12">
+
+              <ngx-charts-bar-vertical
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="single"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+              </ngx-charts-bar-vertical>
+              
               <div class="card">
                   <div class="card-header card-header-danger">
                       <h4 class="card-title ">Stock Portfolio</h4>

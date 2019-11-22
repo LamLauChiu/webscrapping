@@ -35,6 +35,9 @@ import { AddTotalUnitComponent } from '../../add-total-unit/add-total-unit.compo
 
 // For charts
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartsDemoComponent } from '../../charts-demo/charts-demo.component';
+
+
 registerLocaleData(en);
 
 const antDesignIcons = AllIcons as {
@@ -89,6 +92,7 @@ import {
     AddStockPortfolioComponent,
     AddTotalUnitComponent,
     //
+    ChartsDemoComponent,
   ],
   entryComponents: [
     AddStockPortfolioComponent,

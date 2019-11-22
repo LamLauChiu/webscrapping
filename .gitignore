@@ -10,7 +10,8 @@ serviceAccountKey.json
 /node_modules
 /webapp/node_modules
 /webapp/src/app/environments
-
+webapp/src/environments/environment.prod.ts
+webapp/src/environments/environment.ts
 # IDEs and editors
 /.idea
 .project

@@ -14,6 +14,9 @@ import { StockPortfolioComponent } from '../../stock-portfolio/stock-portfolio.c
 import { TotalUnitComponent } from '../../total-unit/total-unit.component';
 import { AddTotalUnitComponent } from '../../add-total-unit/add-total-unit.component';
 
+import { ChartsDemoComponent } from '../../charts-demo/charts-demo.component';
+
+
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -60,6 +63,7 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'stockPortfolio',      component: StockPortfolioComponent },
     { path: 'totalUnit',      component: TotalUnitComponent },
+    { path: 'chartsDemo',      component: ChartsDemoComponent },
     // { path: 'dashboard',      component: DashboardComponent },
     // { path: 'user-profile',   component: UserProfileComponent },
     // { path: 'table-list',     component: TableListComponent },

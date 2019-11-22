@@ -43,7 +43,6 @@ import { registerLocaleData } from '@angular/common';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 import en from '@angular/common/locales/en';
-
 // // For charts
 // import { NgxChartsModule } from '@swimlane/ngx-charts';
 

@@ -44,6 +44,11 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 import en from '@angular/common/locales/en';
 
+import { AuthModule } from "./auth/auth.module";
+import { AuthService } from "./service/auth.service";
+import { AuthGuard } from "./service/auth-guard.service";
+
+import { NgxEchartsModule } from 'ngx-echarts';
 
 registerLocaleData(en);
 
@@ -76,13 +81,16 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
         AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module 
         AngularFireDatabaseModule,  // Firebase database module 
         //
+
+      AuthModule,
+      NgxEchartsModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
 
   ],
-  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ],
+  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons }, AuthService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

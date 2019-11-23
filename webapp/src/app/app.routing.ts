@@ -5,13 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
+import { AuthGuard } from "./service/auth-guard.service";
 const routes: Routes =[
+  { path: "auth", loadChildren: "app/auth/auth.module#AuthModule" },
   {
     path: '',
-    redirectTo: 'stockPortfolio',
+    //redirectTo: 'stockPortfolio',
+    redirectTo: 'auth',
     pathMatch: 'full',
   }, {
     path: '',
+    canActivate: [AuthGuard],
     component: AdminLayoutComponent,
     children: [{
       path: '',

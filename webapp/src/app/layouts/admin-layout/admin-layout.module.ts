@@ -33,12 +33,22 @@ import en from '@angular/common/locales/en';
 import { AddStockPortfolioComponent } from '../../add-stock-portfolio/add-stock-portfolio.component';
 import { AddTotalUnitComponent } from '../../add-total-unit/add-total-unit.component';
 
+import { AuthModule } from "../../auth/auth.module";
+import { AuthService } from "../../service/auth.service";
+import { AuthGuard } from "../../service/auth-guard.service";
+
+import { ChartsComponent } from '../../charts/charts.component';
+
+
 registerLocaleData(en);
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
+
+
+
 
 
 import {
@@ -68,6 +78,8 @@ import {
     NgZorroAntdModule,
     ScrollingModule,
     DragDropModule,
+
+    AuthModule
   ],
   declarations: [
     DashboardComponent,
@@ -82,13 +94,14 @@ import {
     StockPortfolioComponent,
     TotalUnitComponent,
     AddStockPortfolioComponent,
-    AddTotalUnitComponent
+    AddTotalUnitComponent,
+    ChartsComponent
   ],
   entryComponents: [
     AddStockPortfolioComponent,
     AddTotalUnitComponent
   ],
-  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ],
+  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons }, AuthService, AuthGuard ],
 })
 
 export class AdminLayoutModule {}

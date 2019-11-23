@@ -1,0 +1,27 @@
+<div class="card card-accent-info">
+    <div class="card-body">
+      <h4 class="card-title">Use [theme] to set echarts theme</h4>
+      <hr>
+      <button class="btn btn-outline-primary" (click)="theme=undefined">default</button>
+      <button class="btn btn-outline-primary ml-4" (click)="theme='macarons'">macarons</button>
+      <button class="btn btn-outline-primary ml-4" (click)="theme='dark'">dark</button>
+      <hr>
+      <h5> Current Theme: {{ theme ? theme : 'default' }} </h5>
+      <div echarts [options]="options" [theme]="theme" class="demo-chart"></div>
+     
+    </div>
+  </div>
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-accent-info">
+                <div class="card-body">
+                </div>
+            </div>
+          </div>
+            
+      </div>
+  </div>
+</div>

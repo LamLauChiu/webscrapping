@@ -1,36 +1,17 @@
-<div class="main-content">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-
-              <ngx-charts-bar-vertical
-                [view]="view"
-                [scheme]="colorScheme"
-                [results]="single"
-                [gradient]="gradient"
-                [xAxis]="showXAxis"
-                [yAxis]="showYAxis"
-                [legend]="showLegend"
-                [showXAxisLabel]="showXAxisLabel"
-                [showYAxisLabel]="showYAxisLabel"
-                [xAxisLabel]="xAxisLabel"
-                [yAxisLabel]="yAxisLabel"
-                (select)="onSelect($event)">
-              </ngx-charts-bar-vertical>
-              
-              <ngx-charts-pie-chart
-                [view]="view"
-                [scheme]="colorScheme"
-                [results]="single"
-                [gradient]="gradient"
-                [legend]="showLegend"
-                [labels]="true"
-                [legendTitle]="legendTitle"
-                [legendPosition]="right"
-                (select)="onSelect($event)">
-              </ngx-charts-pie-chart>
-              
-          </div>
-      </div>
-  </div>
-</div>
+<div class="control-section">
+    <div id="title" align="center" style="font-size: 15px; font-style: normal;font-family: 'Segoe UI'; font-weight: 500;">AAPL Historical</div>    
+     <div id="container" align="center">
+         <ejs-chart #chartcontainer id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center'
+          style="display:block;" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+          [tooltip]='tooltip' [crosshair] = 'crosshair'  [legendSettings]='legendSettings'(load)='load($event)' (axisLabelRender)='axisLabelRender($event)'>
+             <e-series-collection>
+                 <e-series [dataSource]='data1' type='HiloOpenClose' xName='x' high='high' [marker]='marker' low='low' open='open' close='close' name='Apple Inc' bearFillColor='#2ecd71' bullFillColor='#e74c3d'> </e-series>
+             </e-series-collection>
+         </ejs-chart>
+     </div>
+ </div>
+ <style>
+     #control-container {
+         padding: 0px !important;
+     }
+ </style>

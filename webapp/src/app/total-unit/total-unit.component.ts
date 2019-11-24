@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, Inject,ViewEncapsulation } from '@angular/core';
 
 import { TotalUnitService } from "./../service/total-unit.service";
 import { TotalUnit } from "./../model/total-unit";
@@ -12,12 +12,15 @@ import { DOCUMENT } from '@angular/common';
 import { AddTotalUnitComponent } from '../add-total-unit/add-total-unit.component';
 import { element } from 'protractor';
 
-
+import {
+    AccumulationChart, AccumulationChartComponent, IAccLoadedEventArgs, AccumulationTheme
+} from '@syncfusion/ej2-angular-charts';
 
 @Component({
   selector: 'app-total-unit',
   templateUrl: './total-unit.component.html',
-  styleUrls: ['./total-unit.component.scss']
+  styleUrls: ['./total-unit.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TotalUnitComponent implements OnInit {
     
@@ -33,7 +36,9 @@ export class TotalUnitComponent implements OnInit {
   editCache: { [key: string]: { edit: boolean; data: TotalUnit } } = {};
 
   @ViewChild(NzInputDirective, { static: false, read: ElementRef }) inputElement: ElementRef;
-  
+
+
+  //
   constructor(
     @Inject(DOCUMENT) document,
     private stockPortfolioSerivce: StockPortfolioService,

@@ -3,20 +3,7 @@
       <div class="row">
           <div class="col-md-12">
 
-              <ngx-charts-bar-vertical
-                [view]="view"
-                [scheme]="colorScheme"
-                [results]="single"
-                [gradient]="gradient"
-                [xAxis]="showXAxis"
-                [yAxis]="showYAxis"
-                [legend]="showLegend"
-                [showXAxisLabel]="showXAxisLabel"
-                [showYAxisLabel]="showYAxisLabel"
-                [xAxisLabel]="xAxisLabel"
-                [yAxisLabel]="yAxisLabel"
-                (select)="onSelect($event)">
-              </ngx-charts-bar-vertical>
+          
               
               <div class="card">
                   <div class="card-header card-header-danger">
@@ -24,7 +11,11 @@
                       <p class="card-category"> </p>
                   </div>
                   <div class="card-body">
+
                       <button nz-button (click)="showModal()" nzType="primary" >Add</button>
+                      
+                      <div>Overall Total HKD: <span id="OverallTotal"></span></div>
+                      
                       <nz-table #editRowTable nzBordered zSize="middle" [nzScroll]="{ x: '100%' }" [nzData]="listOfData">
                         <thead>
                           <tr style="padding: 4px;">
@@ -87,9 +78,18 @@
                         </tbody>
                       </nz-table>
 
-                      <div>Overall Total HKD: <span id="OverallTotal"></span></div>
-                  </div>
-
+                    
+                      <div class="col-md-8">
+                          <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)' [enableAnimation]= 'enableAnimation' [center]='center'>
+                              <e-accumulation-series-collection>
+                                  <e-accumulation-series name='Stock:' [dataSource]='stockPortfolioRecordList' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [explode]='explode' explodeOffset='10%' [explodeIndex]='0' 
+                                  >
+                                  </e-accumulation-series>
+                              </e-accumulation-series-collection>
+                          </ejs-accumulationchart>
+                      </div>
+                  
+                    </div>
               </div>
           </div>
       </div>

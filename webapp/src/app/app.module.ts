@@ -43,17 +43,16 @@ import { registerLocaleData } from '@angular/common';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 import en from '@angular/common/locales/en';
-<<<<<<< HEAD
+
 
 import { AuthModule } from "./auth/auth.module";
 import { AuthService } from "./service/auth.service";
 import { AuthGuard } from "./service/auth-guard.service";
 
-import { NgxEchartsModule } from 'ngx-echarts';
-=======
 // // For charts
-// import { NgxChartsModule } from '@swimlane/ngx-charts';
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
+ import { NgxChartsModule } from '@swimlane/ngx-charts';
+//ej2 Chart module
+import { StockChartModule } from '@syncfusion/ej2-angular-charts';
 
 registerLocaleData(en);
 
@@ -87,13 +86,12 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
         AngularFireDatabaseModule,  // Firebase database module 
         //
 
-<<<<<<< HEAD
       AuthModule,
-      NgxEchartsModule
-=======
             //
-    //NgxChartsModule
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
+      NgxChartsModule,
+
+      StockChartModule
+
   ],
   declarations: [
     AppComponent,

@@ -33,17 +33,20 @@ import en from '@angular/common/locales/en';
 import { AddStockPortfolioComponent } from '../../add-stock-portfolio/add-stock-portfolio.component';
 import { AddTotalUnitComponent } from '../../add-total-unit/add-total-unit.component';
 
-<<<<<<< HEAD
+// Auth
 import { AuthModule } from "../../auth/auth.module";
 import { AuthService } from "../../service/auth.service";
 import { AuthGuard } from "../../service/auth-guard.service";
 
-import { ChartsComponent } from '../../charts/charts.component';
-=======
 // For charts
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartsDemoComponent } from '../../charts-demo/charts-demo.component';
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
+import { ChartModule, StockChartAllModule, ChartAllModule, RangeNavigatorModule } from '@syncfusion/ej2-angular-charts';
+import { LineSeriesService, SplineSeriesService, RangeTooltipService, StepLineSeriesService, CategoryService, ParetoSeriesService, ColumnSeriesService,
+       SplineAreaSeriesService, MultiColoredLineSeriesService, TooltipService} from '@syncfusion/ej2-angular-charts';
+import {  AccumulationChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
+
+import { PortfolioUnitDiaryComponent } from '../../portfolio-unit-diary/portfolio-unit-diary.component';
 
 
 registerLocaleData(en);
@@ -85,12 +88,14 @@ import {
     ScrollingModule,
     DragDropModule,
 
-<<<<<<< HEAD
-    AuthModule
-=======
-    NgxChartsModule
+    AuthModule,
+    NgxChartsModule,
+    
+    ChartAllModule, StockChartAllModule,
+    ChartModule, StockChartAllModule, ChartAllModule, RangeNavigatorModule,
+    AccumulationChartAllModule, RangeNavigatorAllModule
+ 
 
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
   ],
   declarations: [
     DashboardComponent,
@@ -106,18 +111,23 @@ import {
     TotalUnitComponent,
     AddStockPortfolioComponent,
     AddTotalUnitComponent,
-<<<<<<< HEAD
-    ChartsComponent
-=======
-    //
     ChartsDemoComponent,
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
+    //
+    PortfolioUnitDiaryComponent,
+
   ],
   entryComponents: [
     AddStockPortfolioComponent,
     AddTotalUnitComponent
   ],
-  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons }, AuthService, AuthGuard ],
+  providers: [ 
+    { provide: NZ_I18N, useValue: en_US }, 
+    { provide: NZ_ICONS, useValue: icons }, 
+    AuthService, 
+    AuthGuard,
+    LineSeriesService, SplineSeriesService, RangeTooltipService, StepLineSeriesService, CategoryService, SplineAreaSeriesService, ParetoSeriesService, ColumnSeriesService,
+    MultiColoredLineSeriesService, TooltipService
+   ],
 })
 
 export class AdminLayoutModule {}

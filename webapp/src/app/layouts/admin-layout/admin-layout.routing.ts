@@ -14,13 +14,8 @@ import { StockPortfolioComponent } from '../../stock-portfolio/stock-portfolio.c
 import { TotalUnitComponent } from '../../total-unit/total-unit.component';
 import { AddTotalUnitComponent } from '../../add-total-unit/add-total-unit.component';
 
-<<<<<<< HEAD
-import { ChartsComponent } from '../../charts/charts.component';
-=======
 import { ChartsDemoComponent } from '../../charts-demo/charts-demo.component';
-
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
-
+import { PortfolioUnitDiaryComponent } from '../../portfolio-unit-diary/portfolio-unit-diary.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -67,13 +62,11 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'stockPortfolio',      component: StockPortfolioComponent },
     { path: 'totalUnit',      component: TotalUnitComponent },
-<<<<<<< HEAD
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'charts',      component: ChartsComponent },
-=======
     { path: 'chartsDemo',      component: ChartsDemoComponent },
+    { path: 'portfolioUnitDiary',      component: PortfolioUnitDiaryComponent },
     // { path: 'dashboard',      component: DashboardComponent },
->>>>>>> 1e7af567b8d24bdb97407de482641279ecb97cfe
+
     // { path: 'user-profile',   component: UserProfileComponent },
     // { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },

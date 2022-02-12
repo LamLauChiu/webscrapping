@@ -34,7 +34,7 @@
     "@ant-design/icons-angular": "^8.1.1",
     "@swimlane/ngx-charts": "^12.0.1",
     "@syncfusion/ej2-angular-charts": "^17.3.28",
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "angularfire2": "^5.1.1",
     "arrive": "2.4.1",
     "bootstrap": "4.3.1",
